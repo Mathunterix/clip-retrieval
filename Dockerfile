@@ -7,15 +7,15 @@ RUN apt-get update && apt-get install -y \
     ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
-# Clone le code (facultatif si tu es déjà dans un repo avec le code)
+# Crée un dossier de travail
 WORKDIR /app
 COPY . /app
 
-# Installe les dépendances Python
+# Installe les dépendances Python du projet
 RUN pip install --upgrade pip && pip install .
 
 # Expose l’API HTTP
 EXPOSE 8010
 
-# Lance le serveur avec API activée
-CMD ["clip-retrieval", "back", "--port", "8010", "--clip-model", "ViT-B-32"]
+# Démarre l'API d'embedding
+CMD ["clip-retrieval", "inference", "--port", "8010", "--clip-model", "ViT-B-32"]
