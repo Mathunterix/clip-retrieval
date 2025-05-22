@@ -15,7 +15,7 @@ COPY . /app
 RUN pip install --upgrade pip && pip install .
 
 # Expose l’API HTTP
-EXPOSE 8080
+EXPOSE 8010
 
 # Lance le serveur avec API activée
 CMD ["clip-retrieval", "--enable-api", "--clip-model", "ViT-B-32", "--enable-remote-code"]
