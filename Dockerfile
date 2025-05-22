@@ -18,4 +18,4 @@ RUN pip install --upgrade pip && pip install .
 EXPOSE 8010
 
 # Lance le serveur avec API activée
-CMD ["clip-retrieval", "--enable-api", "--clip-model", "ViT-B-32", "--enable-remote-code"]
+CMD ["clip-retrieval", "back", "--port", "8010", "--clip-model", "ViT-B-32"]
